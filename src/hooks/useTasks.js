@@ -3,8 +3,7 @@ import taskReducer from '../store/reducers';
 import { ADD_TASK, DELETE_TASK, UPDATE_TASK } from '../store/actions';
 import initialState from '../store/state';
 
-const initializer = () =>
-  JSON.parse(localStorage.getItem('tasks')) || [];
+const initializer = () => JSON.parse(localStorage.getItem('tasks')) || [];
 
 const useTasks = () => {
   const [allTasks, dispatchTask] = useReducer(taskReducer, initialState, initializer);
@@ -29,7 +28,7 @@ const useTasks = () => {
     };
 
     dispatchTask(action);
-  }
+  };
 
   const handleToggleTask = id => {
     const task = allTasks.find(task => task.id === id);
@@ -44,7 +43,7 @@ const useTasks = () => {
     };
 
     dispatchTask(action);
-  }
+  };
 
   return {
     allTasks,
@@ -53,6 +52,6 @@ const useTasks = () => {
     handleDeleteTask,
     handleToggleTask
   };
-}
+};
 
 export default useTasks;

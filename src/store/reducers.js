@@ -1,9 +1,9 @@
 import { ADD_TASK, DELETE_TASK, UPDATE_TASK } from './actions';
 
-const taskReducer = (initialState=[], action) => {
+const taskReducer = (initialState = [], action) => {
   switch (action.type) {
     case ADD_TASK:
-      return [ ...initialState, action.payload ];
+      return [...initialState, action.payload];
     case DELETE_TASK:
       return initialState.filter(task => task.id !== action.payload);
     case UPDATE_TASK:
@@ -15,7 +15,7 @@ const taskReducer = (initialState=[], action) => {
       });
     default:
       return initialState;
-  };
-}
+  }
+};
 
 export default taskReducer;

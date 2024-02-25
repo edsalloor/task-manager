@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
 import useForm from 'hooks/useForm';
 
-const initialForm = {name: 'Test User', email: 'test_user@test.com'};
+const initialForm = { name: 'Test User', email: 'test_user@test.com' };
 
 describe('useForm() hook', () => {
   it('should return initial formState', () => {

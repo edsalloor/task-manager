@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import useForm from '../hooks/useForm';
 
 const AddTaskForm = ({ onAddTask }) => {
@@ -33,19 +35,20 @@ const AddTaskForm = ({ onAddTask }) => {
           placeholder="What is the task?"
           className="form-control"
           name="description"
-          value={ description }
-          onChange={ handleInputChange }
+          value={description}
+          onChange={handleInputChange}
         />
 
-        <button
-          type="submit"
-          className="btn btn-outline-primary mt-3"
-        >
+        <button type="submit" className="btn btn-outline-primary mt-3">
           Add
         </button>
       </form>
     </>
   );
+};
+
+AddTaskForm.propTypes = {
+  onAddTask: PropTypes.func
 };
 
 export default AddTaskForm;

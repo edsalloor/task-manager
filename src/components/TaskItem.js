@@ -4,21 +4,18 @@ const TaskItem = ({ task, onDeleteTask, onToggleTask }) => {
       <span
         className={
           task.completed
-          ? "align-self-center text-decoration-line-through"
-          : "align-self-center"
+            ? 'align-self-center text-decoration-line-through'
+            : 'align-self-center'
         }
         onClick={() => onToggleTask(task.id)}
       >
         {task.description}
       </span>
-      <button
-        className="btn btn-danger"
-        onClick={() => onDeleteTask(task.id)}
-      >
+      <button className="btn btn-danger" onClick={() => onDeleteTask(task.id)}>
         Delete
       </button>
     </li>
-  )
+  );
 };
 
 export default TaskItem;
